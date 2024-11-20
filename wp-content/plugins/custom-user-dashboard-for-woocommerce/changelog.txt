@@ -1,0 +1,24 @@
+* Custom User Dashboard For Woocommerce *
+
+2023-04-07 - version 2.0.1
+* Make compatible with HPOS
+* Resolved compatibility issue with thirdparty plugins endpoint
+* Resolved grouped endpoints issue
+
+
+2023-03-23 - version 2.0.0
+* Resolved compatibility issue with thirdparty plugins endpoint
+* Resoved minor bugs
+
+2021-08-24 - version 1.0.3
+* Modify Css
+* Change uploaded user images path from plugin directory to uploads directory.
+
+2021-07-13 - version 1.0.2
+* Optimize sql queries
+
+2021-06-17 - version 1.0.1
+* Fix tab icons issue
+
+2021-05-12 - version 1.0.0
+* Initial Release

@@ -1,0 +1,46 @@
+*** Conditional Payment Methods For WooCommerce Changelog ***
+
+2022-10-28 - version 3.0.1
+* Fix: Restrictions based on billing/shipping locations rule not working in case of single rule value
+* Update: POT file
+
+2022-10-18 - version 3.0.0
+* New: WooCommerce 7.0.0 compatible
+* New: WordPress 6.0.3 compatible
+* Fix: Spaces in comma separated values causes condition validation to fail
+* Fix: PHP Warning: magic method WC_CPM_Controller::__wakeup() must have public visibility
+* Fix: PHP Warnings in some cases on saving conditions
+* Update: POT file
+
+2022-04-20 - version 2.0.0
+* New: Restrictions based on any custom product taxonomy like 'Product Category', 'Product Type', etc.
+* New: Tested upto WooCommerce 6.3.1
+* New: Tested upto WordPress 5.9.3
+* Update: Allow restricting disabled/custom payment gateways under the list of available payment gateways when adding/editing a condition
+* Update: Documentation links
+* Update: Comment link
+* Update: POT file
+
+2021-11-10 - version 1.3.0
+* New: Tested upto WooCommerce 5.9.0
+* New: Tested upto WordPress 5.8.1
+* Fix: PHP Fatal error: Call to a member function get_billing_country() on null
+* Update: POT file
+
+2020-11-27 - version 1.2.1
+* New: WooCommerce 4.6.2, 4.7.1 compatible
+* New: Tested upto WordPress 5.5.3
+* Update: POT file
+
+2020-10-01 - version 1.2.0
+* New: WooCommerce 4.3.3, 4.4.1, 4.5.2 compatible
+* Fix: Incorrect rule operator in payment conditions
+
+2020-06-20 - version 1.1.0
+* New: WooCommerce 3.9.3, 4.0.1, 4.1.1, 4.2.0 compatible
+* Fix: Comma separated rule validation not working in some cases
+* Update: FAQ, Support & Review links on plugins page
+* Update: POT file
+
+2019-12-31 - version 1.0.0
+* New: First Release

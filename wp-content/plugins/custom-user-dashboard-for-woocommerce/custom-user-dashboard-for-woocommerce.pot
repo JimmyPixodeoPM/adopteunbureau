@@ -1,0 +1,39 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom User Dashboard For Woocommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-30 13:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Domain: custom-user-dashboard-for-woocommerce"
+
+#. Name of the plugin
+msgid "Custom User Dashboard For Woocommerce"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://woocommerce.com/products/custom-user-dashboard-for-woocommerce/"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://woocommerce.com/vendor/plugify/"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Personalize user's my account dashboard by adding new tabs and customizing "
+"default endpoints."
+msgstr ""
+
+#. Author of the plugin
+msgid "Plugify"
+msgstr ""

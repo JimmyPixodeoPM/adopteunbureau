@@ -1,0 +1,150 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: EcoParticipation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-14 01:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.1; wp-5.3.2"
+
+#: eco-participation-admin.php:22 eco-participation-back.php:33
+#: eco-participation-back.php:90 eco-participation-back.php:135
+msgid "Éco-participation"
+msgstr ""
+
+#: eco-participation-admin.php:52 eco-participation-admin.php:69
+#: eco-participation-admin.php:75 eco-participation-admin.php:81
+#: eco-participation-admin.php:88
+msgid "Pas d'affichage"
+msgstr ""
+
+#: eco-participation-admin.php:53
+msgid "Haut de page"
+msgstr ""
+
+#: eco-participation-admin.php:54
+msgid "Haut de page 2"
+msgstr ""
+
+#: eco-participation-admin.php:55
+msgid "Près du prix ( recommandé )"
+msgstr ""
+
+#: eco-participation-admin.php:56
+msgid "Avant le formulaire d'ajout"
+msgstr ""
+
+#: eco-participation-admin.php:57
+msgid "Avant le tableau de variations"
+msgstr ""
+
+#: eco-participation-admin.php:58
+msgid "Avant le formulaire d'ajout au panier"
+msgstr ""
+
+#: eco-participation-admin.php:59
+msgid "Avant l'ajout au panier"
+msgstr ""
+
+#: eco-participation-admin.php:60
+msgid "Après le bouton d'ajout au panier"
+msgstr ""
+
+#: eco-participation-admin.php:61
+msgid "Avant les données méta"
+msgstr ""
+
+#: eco-participation-admin.php:62
+msgid "Après les données méta"
+msgstr ""
+
+#: eco-participation-admin.php:63
+msgid "Avant la description"
+msgstr ""
+
+#: eco-participation-admin.php:64
+msgid "Fin de page"
+msgstr ""
+
+#: eco-participation-admin.php:70
+msgid "Avec le nom du produit"
+msgstr ""
+
+#: eco-participation-admin.php:76 eco-participation-admin.php:82
+#: eco-participation-admin.php:89
+msgid "Après la liste produits"
+msgstr ""
+
+#: eco-participation-admin.php:97
+msgid "Intégration"
+msgstr ""
+
+#: eco-participation-admin.php:103
+msgid "Affichage sur la fiche produit"
+msgstr ""
+
+#: eco-participation-admin.php:111
+msgid "Affichage dans la liste des produits du panier"
+msgstr ""
+
+#: eco-participation-admin.php:116
+#, php-format
+msgid ""
+"<br />Si vous affichez l'éco-participation dans le panier mais souhaitez la "
+"masquer dans le mini-panier, vous pouvez utiliser cette règle CSS :<br />\n"
+"                \t.widget_shopping_cart .ecopart { display: none; }<br />\n"
+"                \tpar exemple <a href='%s'>dans le CSS additionnel de votre "
+"theme</a>\n"
+"                \t"
+msgstr ""
+
+#: eco-participation-admin.php:125
+msgid "Affichage du total sur la page panier"
+msgstr ""
+
+#: eco-participation-admin.php:133
+msgid "Affichage du total sur la page de commande"
+msgstr ""
+
+#: eco-participation-admin.php:141
+msgid "Affichage dans les emails clients"
+msgstr ""
+
+#: eco-participation-admin.php:151
+msgid "Permettre la modification du champ en édition rapide"
+msgstr ""
+
+#: eco-participation-front.php:17 eco-participation-front.php:60
+#: eco-participation-front.php:103 eco-participation-front.php:133
+#: eco-participation-front.php:173
+#, php-format
+msgid "Dont éco-participation : %s"
+msgstr ""
+
+#: eco-participation.php:28
+msgid "Error loading ecopart"
+msgstr ""
+
+#. Name of the plugin
+msgid "EcoParticipation"
+msgstr ""
+
+#. Description of the plugin
+msgid "Saisie et affichage de l'éco participation dans WooCommerce"
+msgstr ""
+
+#. Author of the plugin
+msgid "Fluenx"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.fluenx.com/"
+msgstr ""

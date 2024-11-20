@@ -1,0 +1,6 @@
+TODO
+page admin
+	texte
+	affichage ou non
+	
+shortcodes

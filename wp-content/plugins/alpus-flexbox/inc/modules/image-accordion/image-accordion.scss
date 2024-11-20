@@ -1,0 +1,56 @@
+@import "../../../plugin-framework/assets/sass/base/config";
+@import "../../../plugin-framework/assets/sass/base/mixins";
+@import "../../../plugin-framework/assets/sass/base/direction";
+
+.alpus-nested-ia-wrapper {
+    --alpha-ia-size: 500px;
+    --alpha-ia-direction: row;
+    --alpha-ia-active-size: 3;
+
+    display: flex;
+    flex-flow: var(--alpha-ia-direction);
+    height: var(--alpha-ia-size);
+
+    .ia-item>.e-con,
+    .ia-item>.e-con>.e-con {
+        height: 100%;
+    }
+
+    .ia-item {
+        position: relative;
+        flex: 1;
+        transition: flex .4s;
+        cursor: pointer;
+
+        >.e-con:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--alpha-ia-overlay-color);
+            transition: .4s;
+        }
+    }
+
+    &.active-on-hover .ia-item:not(:hover):not(.active) .animated,
+    &.active-on-click .ia-item:not(.active) .animated {
+        animation: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.active-on-hover .ia-item:hover,
+    .ia-item.active {
+        flex: var(--alpha-ia-active-size) 1 0%;
+
+        >.e-con:before {
+            background-color: var(--alpha-ia-hover-overlay-color);
+        }
+    }
+
+    @include mq(md, max) {
+        --alpha-ia-direction: column;
+    }
+}
