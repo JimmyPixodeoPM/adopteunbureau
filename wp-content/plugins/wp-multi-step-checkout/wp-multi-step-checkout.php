@@ -3,7 +3,7 @@
  * Plugin Name: Multi-Step Checkout for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/wp-multi-step-checkout/
  * Description: Split the different sections of the default WooCommerce checkout page into multiple steps
- * Version: 2.29
+ * Version: 999999
  * Author: SilkyPress
  * Author URI: https://www.silkypress.com
  * License: GPL2

@@ -444,6 +444,11 @@ p#lien_facture_field {
 .woocommerce-cart .cart-collaterals button[name="calc_shipping"][type="submit"].button.wc-action-btn {
     display: none;
 }
+.woo-bottom-description h1,
+.woo-bottom-description h2,
+.woo-bottom-description h3{
+    margin-bottom: 0;
+}
 
 @media (max-width: 991px) {
     body .btn-mobile .elementor-button {

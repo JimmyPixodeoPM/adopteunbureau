@@ -28,7 +28,7 @@ function porto_woocommerce_share() {
 function porto_woocommerce_sale_product_period( $dynamic_product = false ) {
 	global $product, $porto_woocommerce_loop;
 	if ( ( ( ! isset( $porto_woocommerce_loop['widget'] ) || ! $porto_woocommerce_loop['widget'] ) && $product && $product->is_on_sale() ) || ( $dynamic_product && $dynamic_product->is_on_sale() ) ) {
-		$product_temp;
+		$product_temp = "";
 		if ( $dynamic_product ) {
 			$product_temp = $product;
 			$product      = $dynamic_product;
@@ -294,11 +294,91 @@ if ( ! function_exists( 'porto_woocommerce_product_sticky_addcart' ) ) :
 				if ( $product->is_type( 'simple' ) ) {
 					echo '<button type="submit" class="single_add_to_cart_button button">' . esc_html__( 'Add to cart', 'woocommerce' ) . '</button>';
 				} else {
-					echo '<button class="single_add_to_cart_button button scroll-to-sticky">' . ( true == $product->is_type( 'variable' ) ? esc_html__( 'Select options', 'woocommerce' ) : $product->single_add_to_cart_text() ) . '</button>';
+					echo '<button class="button-modal-sticky-cart">Choix des options</button>';
+					// echo '<button class="single_add_to_cart_button button scroll-to-sticky">' . ( true == $product->is_type( 'variable' ) ? esc_html__( 'Select options', 'woocommerce' ) : $product->single_add_to_cart_text() ) . '</button>';
 				}
 			echo '</div>';
 		echo '</div></div>';
+		global $product, $porto_settings;
+		if('variable' == $product->get_type()){
+			?>
+			<div class="modal-overlay-sticky-cart">
+				<div class="wrap-modal-sticky-cart">
+					<div class="modal-sticky-cart">
+						<h2>Variations de choix modal</h2>
+						<button class="close-modal-sticky-cart">
+							<span class="close-icon">&times;</span>
+						</button>
+						<?php
+						$attributes = $product->get_attributes();
+						$available_variations = $product->get_available_variations();
+						$variations_json = wp_json_encode($available_variations);
+						$variations_attr = function_exists('wc_esc_json') ? wc_esc_json($variations_json) : _wp_specialchars($variations_json, ENT_QUOTES, 'UTF-8', true);
+						$attribute_keys  = array_keys( $attributes );
+						?>
+						<form class="variations_form cart"
+							action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
+							method="post" enctype="multipart/form-data" data-product_id="<?php echo absint($product->get_id()); ?>"
+							data-product_variations="<?php echo esc_attr($variations_attr); ?>">
+							<table class="variations" cellspacing="0">
+								<tbody>
+									<?php
+									$loop = 0;
+									$count = count($attributes);
+									foreach ($attributes as $attribute_name => $wc_attribute):
+										$loop++;
+										if ($wc_attribute->get_variation()) {
+											$options = $wc_attribute->get_options();
+											$new_options = array();
 
+											foreach ($options as $option) {
+												if (is_numeric($option)) {
+													$term = get_term($option);
+
+													if ($term && !is_wp_error($term)) {
+														$new_options[] = $term->slug;
+													}
+												} else {
+													$new_options[] = $option;
+												}
+											}
+										}
+
+										?>
+										<tr>
+											<th class="label">
+												<label
+													for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>"><?php echo wc_attribute_label($attribute_name); ?></label>
+											</th>
+											<td class="value">
+												<?php
+												wc_dropdown_variation_attribute_options(
+													array(
+														'options' => $new_options,
+														'attribute' => $attribute_name,
+														'product' => $product,
+													)
+												);
+												echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+												?>
+												
+											</td>
+										</tr>
+									<?php endforeach; ?>
+								</tbody>
+							</table>
+							<div class="single_variation_wrap">
+								<?php
+								do_action('woocommerce_single_variation');
+								?>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+			<?php
+		}
 		define( 'PORTO_STICKY_ADDCART_RENDERED', true );
 	}
 endif;

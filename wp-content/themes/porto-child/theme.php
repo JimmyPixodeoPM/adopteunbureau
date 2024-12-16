@@ -1,12 +1,12 @@
 <?php
 add_action( 'woocommerce_after_save_address_validation', 'strict_validate_email_domain', 10, 3 );
 function strict_validate_email_domain( $user_id, $load_address, $address ) {
-    // if ( isset( $_POST['billing_email'] ) && !empty($_POST['billing_phone'])) {
-    //     $email = $_POST['billing_email'];
-    //     if ( ! strict_email_validation( $email) ) {
-    //         wc_add_notice( __( 'E-mail n’est pas une e-mail valide.', 'woocommerce' ), 'error' );
-    //     }
-    // }
+    if ( isset( $_POST['billing_email'] ) && !empty($_POST['billing_phone'])) {
+        $email = $_POST['billing_email'];
+        if ( ! strict_email_validation( $email) ) {
+            wc_add_notice( __( 'E-mail n’est pas une e-mail valide.', 'woocommerce' ), 'error' );
+        }
+    }
 
     if ( isset( $_POST['billing_phone'] ) && !empty($_POST['billing_phone'])) {
         $phone = sanitize_text_field( $_POST['billing_phone'] ); // Sanitize the phone number input
@@ -37,4 +37,13 @@ function validate_billing_phone( $phone ) {
     // Check if the phone number is exactly 10 digits and numeric
     return preg_match( '/^\d{10}$/', $phone );
 }
+
+function woo_description_category_shortcode(){
+    $current_category = get_queried_object();
+    $category_slug = $current_category->slug;
+    echo "<div class='woo-bottom-description'>";
+    echo do_shortcode('[woo-bottom-description category_slug="'.$category_slug.'"]');
+    echo "</div>";
+}
+add_shortcode('woo_description_category','woo_description_category_shortcode');
 ?>

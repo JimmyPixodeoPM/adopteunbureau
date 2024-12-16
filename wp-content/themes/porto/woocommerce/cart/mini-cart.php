@@ -119,7 +119,7 @@ echo '</div>';
 
 	<?php endif; ?>
 
-</ul><!-- end product list -->
+</ul><!-- end product list aaaa -->
 
 <?php if ( $has_items ) : ?>
 
