@@ -52,7 +52,7 @@ jQuery(document).ready(function ($) {
     }).each(function () {
         this.nodeValue = this.nodeValue.replace('×', '').trim();
     });
-    
+
     // $('.spec-infor table tbody').each(function () {
     //     if ($(this).children().length === 0) {
     //         $(this).closest('.spec-infor').hide();
@@ -158,4 +158,70 @@ jQuery(document).ready(function ($) {
     // });
 
 
+    $(".woocommerce-input-wrapper #billing_phone").intlTelInput({
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js",
+        initialCountry: "fr",
+        separateDialCode: true,
+        onlyCountries: ["be", "lu", "fr"],
+        countrySearch: false,
+        formatOnDisplay: true,
+    });
+    $(".woocommerce-address-fields #shipping_phone").intlTelInput({
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js",
+        initialCountry: "fr",
+        separateDialCode: true,
+        onlyCountries: ["be", "lu", "fr"],
+        countrySearch: false,
+        formatOnDisplay: true,
+    });
+    const input = document.getElementById('billing_address_1');
+    const autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+        const country = place.address_components.find(c => c.types.includes('country'))?.long_name || '';
+        document.getElementById('billing_city').value = country;
+        const postalCode = place.address_components.find(c => c.types.includes('postal_code'))?.long_name || '';
+        document.getElementById('billing_postcode').value = postalCode;
+    });
+
+    const inputShipping = document.getElementById('shipping_address_1');
+    const autocompleteShipping = new google.maps.places.Autocomplete(inputShipping);
+    autocompleteShipping.addListener('place_changed', function () {
+        var placeShipping = autocompleteShipping.getPlace();
+        const country = placeShipping.address_components.find(c => c.types.includes('country'))?.long_name || '';
+        document.getElementById('shipping_city').value = country;
+        const postalCode = placeShipping.address_components.find(c => c.types.includes('postal_code'))?.long_name || '';
+        document.getElementById('shipping_postcode').value = postalCode;
+    });
+
+    $('.button-modal-sticky-cart').click(function() {
+        $('.modal-overlay-sticky-cart').fadeIn();
+        $('html').addClass('modal-sticky-cart-open');
+    });
+
+    $('.close-modal-sticky-cart').click(function() {
+        $('.modal-overlay-sticky-cart').fadeOut();
+        $('html').removeClass('modal-sticky-cart-open');
+    });
+    // $('.wrap-modal-sticky-cart').click(function() {
+    //     $('.modal-overlay-sticky-cart').fadeOut();
+    //     $('html').removeClass('modal-sticky-cart-open');
+    // });
+    $('.modal-overlay-sticky-cart').click(function(event) {
+        if ($(event.target).is('.modal-overlay-sticky-cart')) {
+            $(this).fadeOut();
+            $('html').removeClass('modal-sticky-cart-open');
+        }
+    });
+
+    $('.variations_form').each(function () {
+        $(this).wc_variation_form();
+    });
+
+    // $('form.variations_form').on('woocommerce_variation_select_change', function() {
+    //     var selected_image = $('input.variation_id').val(); 
+    //     var image = $('#product-' + selected_image).data('image'); 
+
+    //     $('#main-product-image').attr('src', image);
+    // });
 });
